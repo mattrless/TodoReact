@@ -1,4 +1,11 @@
-export function TodoSearch() {
+interface props { 
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export function TodoSearch({ searchValue, setSearchValue }: props) {
+  
+
   return (
     <input
       placeholder="Search..."
@@ -20,8 +27,9 @@ export function TodoSearch() {
         focus:outline
         focus:outline-[#61DAFA]
       "
-      onChange={ (e) => {
-        console.log(e.target.value)
+      value={searchValue}
+      onChange={ (e) => {        
+        setSearchValue(e.target.value);
       }}
     />
   );
