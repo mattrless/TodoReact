@@ -1,10 +1,7 @@
-interface props { 
-  searchValue: string;
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
-}
+import { useTodoStore } from '../context/useTodoStore'
 
-export function TodoSearch({ searchValue, setSearchValue }: props) {
-  
+export function TodoSearch() {
+  const { searchValue, setSearchValue } = useTodoStore();
 
   return (
     <input
