@@ -63,9 +63,11 @@ export const useTodoStore = create<TodoState>((set, get) => ({
     set({ todos: newTodos });
   },
 
+
   changeModalVisibility: () => set((state) => ({
     modalVisibility: !state.modalVisibility
   })),
+
 
   createTodo: (newTodoValue: string) => {
     const newTodos = [...get().todos];
@@ -80,4 +82,6 @@ export const useTodoStore = create<TodoState>((set, get) => ({
     localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
     set({ todos: newTodos });
   },
+
+  
 }));
